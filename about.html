@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ocean Furniture</title>
+    <meta charset="UTF-8"><!--idk-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!--idk-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--idk-->
+    <link rel="stylesheet" type="text/css" href="furniture.css">  <!--css from file--> 
+    <link rel="shortcut icon" type="image/x-icon" href="ocean_logo-mini.png">  <!--favicon-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Include Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include Bootstrap JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!--at least in down change the color of background-->
+    <style> -->
+        body {
+            margin: 0;
+            padding: 0;
+            background-color:white;
+        }
+.navbar {
+    margin-bottom: 0;
+}
+
+/* Reduce margin-top of the carousel */
+
+
+        header {
+            width: 100%;
+            background-color:rgba(237,237,237,255);
+            overflow: auto;
+        }
+
+        .logo img {
+            position: absolute;
+            margin-top: 15px;
+            margin-left: 10px;
+        }
+
+
+        ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        li {
+            display: flex;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-family: Poppins;
+            color: rgba(15,54,85,255);
+            
+        }
+		.image-container {
+            max-width: 100%;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+        }
+        .custom-col {
+        margin-right: 10px;
+    }
+    .table-row{ /*делает тейбл белым */
+        background-color: aliceblue;
+    }
+    .btn.btn-primary {
+    background-color:rgba(196,158,117,255); /* Change this to your desired background color */
+    color: #FFFFFF; /* Change this to your desired text color */
+    border:rgba(196,158,117,255); /* Remove the default button border */
+    border-radius: 5px; /* Add a border radius for rounded corners */
+}
+.btn.btn-primary:hover {
+    background-color:rgba(14, 54, 83, 1); /* Change this to your desired hover background color */
+    color: #FFFFFF; /* Change this to your desired hover text color */
+    cursor: pointer; /* Change the cursor to indicate interactivity  я конечно поменяла кнопку на желаемый цвет но он не заметен */
+}  
+/* CSS for partner logos */
+.partner-logo {
+    width: 150px; /* Adjust the width as needed */
+    height: 150px; /* Adjust the height as needed */
+    margin-right: 45px;
+}
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+    
+}
+.hero{
+    background-color: #f8f8f8;
+    overflow: hidden;
+}
+.heading h1{
+    color: rgba(14, 54, 83, 1);
+    font-size: 55px;
+    text-align: center;
+    margin-top: 35px;
+
+}
+.containerr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 65px auto;
+}
+.hero-content{
+    flex: 1;
+    width: 600px;
+    margin:0px 25px;
+    animation: fadeInUp 2s ease;
+}
+.hero-content h2{
+    font-size: 38px;
+    margin-bottom: 20px;
+    color: #333;
+}
+.hero-content p{
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    color: #666;
+}
+.hero-image{
+    flex: 1;
+    width: 600px;
+    margin: auto;    
+    animation: fadeInRigth 2s ease;
+
+
+}
+img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+@media screen and (max-width: 768px) {
+    .heading h1{
+        font-size: 45px;
+        margin-top: 30px;
+
+    }
+    .hero{
+        margin-top: 0px;
+    }
+    .containerr{
+        width: 100%;
+        flex: column;
+        margin: 0px;
+        padding: 0px 40px;
+
+    }
+    .hero-content{
+        width: 100%;
+        margin: 35px 0px;
+    }
+    .hero-content h2{
+        font-size: 30px;
+    }
+    .hero-content p{
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    .hero-image{
+        width: 100%;
+
+    }
+
+    
+}
+.account-icon {
+            font-size: 24px;
+            color: #888; /* Gray color */
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            background-color: #f2f2f2; /* Gray background color */
+            text-align: center;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .account-icon:hover {
+            color: #007bff; /* Change color on hover */
+            background-color: #e0e0e0; /* Change background color on hover */
+        }
+.search-container {
+            position: relative;
+            width: 200px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding-right: 30px; /* Space for the search icon */
+        }
+
+        .search-icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="ocean_logo-1.png" style="width: 200px; height: auto;" alt="Ocean Furniture Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search...">
+                    <i class="fas fa-search search-icon" id="searchIcon"></i>
+                </div>
+                <a href="account.html"> 
+                    <i class="fas fa-user account-icon"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+  <!--navbar-->
+  <script>
+    // JavaScript to toggle the search bar
+    const searchIcon = document.getElementById("searchIcon");
+    const searchInput = document.getElementById("searchInput");
+
+    searchIcon.addEventListener("click", function() {
+        searchInput.style.display = (searchInput.style.display === "none") ? "block" : "none";
+        if (searchInput.style.display === "block") {
+            searchInput.focus();
+        }
+    });
+</script>   
+    <!--img-->
+    <div class="image-container">
+        <img src="about.jpeg" alt="main">
+    </div>
+    <br>
+    <!--img-->
+<br>
+<br>
+
+<section class="hero">
+    <div class="heading"> 
+        <h1>About Us</h1>
+    </div>
+    <div class="containerr">
+        <div class="hero-content"> 
+            <h2>Welcome To Out Website</h2>
+            <p>Welcome to Ocean Furniture, your premier destination for exquisite office furniture solutions in Shymkent.
+
+                Our Expertise
+                At Ocean Furniture, we specialize in offering luxurious, mid-range,
+                 and custom-made office furniture. Our handcrafted pieces, created by 
+                 local artisans, provide an opportunity to enhance your workspace without breaking the bank.
+                
+                Why Choose Us?
+                Luxury and Affordability: We believe that luxury 
+                office furniture can be accessible to all. Our local craftsmen
+                 ensure quality at competitive prices.
+                
+                Customization: Tailor your office furniture to meet your 
+                unique needs and style preferences.
+                
+                Showroom Experience: Visit our showroom to explore our wide range of office furniture collections.</p>
+        </div>
+        <div class="hero-image"> 
+            
+            <img src="aboutus.png" alt="About Us">
+        </div>
+    </div>
+</section>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<section class="partners">
+    <div class="container">
+        <h2 class="text-center">Partners</h2>
+        <div class="text-center">
+            <img src="partner_logo1.png" alt="Partner Logo 1" class="partner-logo">
+            <img src="partner_logo2.png" alt="Partner Logo 2" class="partner-logo">
+            <img src="partner_logo3.png" alt="Partner Logo 3" class="partner-logo">
+            <img src="partner_logo4.png" alt="Partner Logo 4" class="partner-logo">
+            <img src="partner_logo5.png" alt="Partner Logo 5" class="partner-logo">
+        </div>
+    </div>
+</section>
+<br>
+<br>
+
+<!--footer-->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>company</h4>
+                <ul>
+                    <li><a href="about.html">about us</a></li>
+                    <li><a href="#">our services</a></li>
+                    <li><a href="#">privacy policy</a></li>
+                    <li><a href="#">affiliate program</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>get help</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">shipping</a></li>
+                    <li><a href="#">returns</a></li>
+                    <li><a href="#">order status</a></li>
+                    <li><a href="#">payment options</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>online shop</h4>
+                <ul>
+                    <li><a href="#">desk & table</a></li>
+                    <li><a href="#">chair</a></li>
+                    <li><a href="#">sofa</a></li>
+                    <li><a href="#">storage </a><span class="badge bg-secondary">New</span></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>follow us</h4>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/ocean.furniture.kz/?hl=de" target = "_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=77017245588" target = "_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://t.me/+TY3ofZQ9pvk2MjJi"><i class="fab fa-telegram" target = "_blank"></i></a>
+                </div>
+            </div>
+            <div class="footer-col"> 
+                <h4>NEWSLETTER</h4>
+                <form class="form-inline">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <input type="email" class="form-control" id="email" placeholder="Your email address">
+                        <button type="submit" class="btn btn-primary ">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--footer-->
+</body>
+</html>

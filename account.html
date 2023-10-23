@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ocean Furniture</title>
+    <meta charset="UTF-8"><!--idk-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!--idk-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--idk-->
+    <link rel="stylesheet" type="text/css" href="furniture.css">  <!--css from file--> 
+    <link rel="shortcut icon" type="image/x-icon" href="ocean_logo-mini.png">  <!--favicon-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Include Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include Bootstrap JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!--at least in down change the color of background-->
+<style> -->
+    body {
+        margin: 0;
+        padding: 0;    
+        background-color: #f0f0f0;
+    }
+.navbar {
+margin-bottom: 0;
+}
+
+/* Reduce margin-top of the carousel */
+
+
+    header {
+        width: 100%;
+        background-color:rgba(237,237,237,255);
+        overflow: auto;
+    }
+
+    .logo img {
+        position: absolute;
+        margin-top: 15px;
+        margin-left: 10px;
+    }
+
+
+    ul {
+        padding: 0;
+        list-style: none;
+    }
+
+    li {
+        display: flex;
+        margin-right: 20px;
+    }
+
+    nav a {
+        color: rgba(15,54,85,255);
+        
+    }
+    .image-container {
+        max-width: 100%;
+    }
+
+    .image-container img {
+        width: 100%;
+        height: auto;
+    }
+    .custom-col {
+    margin-right: 10px;
+}
+.table-row{ /*делает тейбл белым */
+    background-color: aliceblue;
+}
+.btn.btn-primary {
+background-color:rgba(196,158,117,255); /* Change this to your desired background color */
+color: #FFFFFF; /* Change this to your desired text color */
+border:rgba(196,158,117,255); /* Remove the default button border */
+border-radius: 5px; /* Add a border radius for rounded corners */
+}
+.btn.btn-primary:hover {
+background-color:rgba(14, 54, 83, 1); /* Change this to your desired hover background color */
+color: #FFFFFF; /* Change this to your desired hover text color */
+cursor: pointer; /* Change the cursor to indicate interactivity  я конечно поменяла кнопку на желаемый цвет но он не заметен */
+} 
+
+.containerr {
+display: flex;
+font-size: 14px;
+}
+
+.navbarr {
+margin: auto;
+padding: 0.5rem 1.5rem;
+background: #fff;
+border-radius: 1rem;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+display: flex;
+gap: 2rem;
+}
+
+.nav-link, .drop-down li {
+list-style: none;
+height: 100%;
+padding: 0.5rem 1rem;
+font-weight: 600;
+cursor: pointer;
+}
+
+.drop-down {
+position: absolute;
+padding: 0.5rem 0;
+margin: 0.5rem -0.5rem;
+background: antiquewhite;
+color: black;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+border-radius: 0.5rem;
+font-size: 12px;
+display: none;
+}
+
+
+
+.services:hover .drop-down {
+display: block;
+}
+
+.services a {
+display: flex;
+align-items: center;
+}
+
+.services .dropdown-icon {
+font-size: 18px;
+position: relative;
+right: -5px;
+transform: rotate(0deg);
+transition: 0.3s ease-in-out all;
+}
+
+.services:hover .dropdown-icon {
+transform: rotate(180deg);
+}
+@media (max-width: 768px) {
+.footer {
+  text-align: center;
+}
+
+.footer-col {
+  flex: 1 0 50%;
+}
+
+.social-links {
+  margin-top: 10px;
+}
+}
+
+@media (max-width: 576px) {
+.footer-col {
+  flex: 1 0 100%;
+}
+}
+.account-icon {
+        font-size: 24px;
+        color: #888; /* Gray color */
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 50%;
+        background-color: #f2f2f2; /* Gray background color */
+        text-align: center;
+        display: inline-block;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .account-icon:hover {
+        color: #007bff; /* Change color on hover */
+        background-color: #e0e0e0; /* Change background color on hover */
+    }
+.search-container {
+        position: relative;
+        width: 200px; /* Set your desired width */
+    }
+
+    .search-input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding-right: 30px; /* Space for the search icon */
+    }
+
+    .search-icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 10px;
+        cursor: pointer;
+    }
+    
+
+
+@media (max-width: 991.98px) {
+    .padding {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .padding {
+        padding: 1rem;
+    }
+}
+
+.padding {
+    padding: 5rem;
+}
+
+.card {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+}
+
+.pl-3, .px-3 {
+    padding-left: 1rem !important;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #d2d2dc;
+    border-radius: 0;
+}
+
+.pr-3, .px-3 {
+    padding-right: 1rem !important;
+}
+
+.card .card-body {
+    padding: 1.25rem 1.75rem;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.card .card-title {
+    color: #000000;
+    margin-bottom: 0.625rem;
+    text-transform: capitalize;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.add-items {
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+.add-items input[type="text"] {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 100%;
+    background: transparent;
+}
+
+.form-control {
+    border: 1px solid #f3f3f3;
+    font-weight: 400;
+    font-size: 0.875rem;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.875rem 1.375rem;
+    font-size: 1rem;
+    line-height: 1;
+    color: #495057;
+    background-color: #ffffff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 2px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.add-items .btn {
+    margin-left: 0.5rem;
+}
+
+.btn {
+    font-size: 0.875rem;
+    line-height: 1;
+    font-weight: 400;
+    padding: 0.7rem 1.5rem;
+    border-radius: 0.1275rem;
+}
+
+.list-wrapper {
+    height: 100%;
+    max-height: 100%;
+}
+
+.add-items {
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+.add-items input[type="text"] {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 100%;
+    background: transparent;
+}
+
+
+
+
+
+
+
+.list-wrapper ul {
+    padding: 0;
+    text-align: left;
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.list-wrapper ul li {
+    font-size: 0.9375rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+.list-wrapper ul li:first-child {
+    border-bottom: none;
+}
+
+
+.feedback-message {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.success {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.error {
+    background-color: #f44336;
+    color: white;
+}
+
+
+
+.list-wrapper .remove {
+    cursor: pointer;
+    font-size: 1.438rem;
+    font-weight: 600;
+    width: 1.25rem;
+    height: 1.25rem;
+    line-height: 20px;
+    text-align: center;
+}
+
+.list-wrapper .completed {
+    text-decoration: line-through;
+    text-decoration-color: #3da5f4;
+}
+
+.list-wrapper ul li .form-check {
+    max-width: 90%;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+
+
+.form-check {
+    position: relative;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 0;
+}
+
+
+
+.form-check .form-check-label {
+    min-height: 18px;
+    display: block;
+    margin-left: 1.75rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.form-check-label {
+    margin-bottom: 0;
+}
+
+.list-wrapper input[type="checkbox"] {
+    margin-right: 15px;
+}
+
+.form-check .form-check-label input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 0;
+    margin-top: 0;
+    z-index: 1;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+ p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 100%;
+    white-space: nowrap;
+}
+
+.form-check .form-check-label input[type="checkbox"] + .input-helper:before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    border-radius: 2px;
+    border: solid #405189;
+    border-width: 2px;
+    -webkit-transition: all;
+    -moz-transition: all;
+    -ms-transition: all;
+    -o-transition: all;
+    transition: all;
+    transition-duration: 0s;
+    -webkit-transition-duration: 250ms;
+    transition-duration: 250ms;
+}
+
+.form-check .form-check-label input[type="checkbox"] + .input-helper:before,
+.form-check .form-check-label input[type="checkbox"] + .input-helper:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.form-check .form-check-label input[type="checkbox"] + .input-helper:after {
+    -webkit-transition: all;
+    -moz-transition: all;
+    -ms-transition: all;
+    -o-transition: all;
+    transition: all;
+    transition-duration: 0s;
+    -webkit-transition-duration: 250ms;
+    transition-duration: 250ms;
+    font-family: Material Design Icons;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+    content: '\F12C';
+    font-size: 0.9375rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.form-check .form-check-label input[type="checkbox"] + .input-helper:before,
+.form-check .form-check-label input[type="checkbox"] + .input-helper:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.form-check .form-check-label input[type="checkbox"]:checked + .input-helper:before {
+    background: #405189;
+    border-width: 0;
+}
+
+.form-check .form-check-label input[type="checkbox"] + .input-helper:before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    border-radius: 2px;
+    border: solid #405189;
+    border-width: 2px;
+    -webkit-transition: all;
+    -moz-transition: all;
+    -ms-transition: all;
+    -o-transition: all;
+    transition: all;
+    transition-duration: 0s;
+    -webkit-transition-duration: 250ms;
+    transition-duration: 250ms;
+}
+
+.form-check .form-check-label input[type="checkbox"] + .input-helper:after {
+    font-family: FontAwesome;
+    content: "\f095";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    color: #fff;
+}
+
+.text-primary,
+.list-wrapper .completed .remove {
+    color: #405189 !important;
+}
+
+.list-wrapper .remove {
+    cursor: pointer;
+    font-size: 1.438rem;
+    font-weight: 600;
+    width: 1.25rem;
+    height: 1.25rem;
+    line-height: 20px;
+    text-align: center;
+}
+
+.ml-auto,
+.list-wrapper .remove,
+.mx-auto {
+    margin-left: auto !important;
+}
+
+.mdi-close-circle-outline:before {
+    content: "\F15A";
+}
+
+.list-wrapper ul li {
+    font-size: 0.9375rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+.mdi:before {
+    font-family: FontAwesome;
+    content: "\f00d";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-size: 0.756em;
+    color: #405189;
+}
+
+.list-wrapper ul {
+    padding: 0;
+    text-align: left;
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.flex-column-reverse {
+    flex-direction: column-reverse !important;
+}
+
+
+
+
+.list-wrapper ul li,
+
+
+
+.navbar-dropdown .dropdown-item {
+    display: flex !important;
+}
+</style>
+</head>
+
+<body>
+    <!--script for carousel-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#carouselExample').carousel();
+        });
+    </script>
+    <!--script for carousel-->
+
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="ocean_logo-1.png" style="width: 200px; height: auto;" alt="Ocean Furniture Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search...">
+                    <i class="fas fa-search search-icon" id="searchIcon"></i>
+                </div>
+                <a href="account.html"> 
+                    <i class="fas fa-user account-icon"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!--navbar-->
+    <!--img-->
+    <div class="image-container">
+        <img src="account.jpg" alt="main">
+    </div>
+    <br>
+    <!--img-->
+<!--script for search bar-->
+<script>
+    const searchIcon = document.getElementById("searchIcon");
+    const searchInput = document.getElementById("searchInput");
+
+    searchIcon.addEventListener("click", function() {
+        searchInput.style.display = (searchInput.style.display === "none") ? "block" : "none";
+        if (searchInput.style.display === "block") {
+            searchInput.focus();
+        }
+    });
+</script>
+ 
+<!--form-->
+<div class="container">
+    <h2 class="text-center" style="margin-top: 50px;">Sign up</h2>
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-md-6 offset-md-3">
+            <form id="messageForm" onsubmit="return validateForm()">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                    <div id="nameError" class="error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                    <div id="emailError" class="error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                    <div id="passwordError" class="error"></div>
+                </div>
+                <button type="button" class="btn btn-primary custom-primary-button" id="sendButton">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!--form-->
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="row container d-flex justify-content-center">
+            <div class="col-md-12">
+                <div class="card px-3">
+                    <div class="card-body">
+                        
+                        <div class="add-items d-flex"> <input type="text" class="form-control todo-list-input" placeholder="Add new task."> <button class="add btn btn-primary font-weight-bold todo-list-add-btn">Add</button> </div>
+                        <div class="list-wrapper">
+                            <ul class="d-flex flex-column-reverse todo-list">
+                                <li>
+                                    <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox"> Buy new sofa <i class="input-helper"></i></label> </div> <i class="remove mdi mdi-close-circle-outline"></i>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!-- Include this script in your HTML file -->
+<script>
+    function validateForm() {
+        // Get input values
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+
+        // Elements for displaying error messages
+        var nameError = document.getElementById("nameError");
+        var emailError = document.getElementById("emailError");
+        var passwordError = document.getElementById("passwordError");
+
+        // Regular expressions for validation
+        var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+        // Initialize validation flags
+        var isValid = true;
+
+        // Validate name
+        if (name === "") {
+            nameError.innerHTML = "Name is required";
+            isValid = false;
+        } else {
+            nameError.innerHTML = "";
+        }
+
+        // Validate email
+        if (!email.match(emailRegex)) {
+            emailError.innerHTML = "Invalid email address";
+            isValid = false;
+        } else {
+            emailError.innerHTML = "";
+        }
+
+        // Validate password (add your password validation logic here)
+
+        if (password === "") {
+            passwordError.innerHTML = "Password is required";
+            isValid = false;
+        } else if (password.length < 6) {
+            passwordError.innerHTML = "Password must be at least 6 characters long";
+            isValid = false;
+        } else {
+            passwordError.innerHTML = "";
+        }
+
+        // Display a confirmation dialog
+        if (isValid) {
+            var confirmation = confirm("Do you want to submit the form?");
+            if (confirmation) {
+                alert("Form submitted successfully!");
+            }
+        }
+
+        return isValid;
+    }
+    
+</script>
+<script>
+    const sendButton = document.getElementById("sendButton");
+  
+    sendButton.addEventListener("click", () => {
+      const userConfirmed = confirm("Do you want to send your signup request?");
+  
+      if (userConfirmed) {
+        alert("Your signup request has been sent!");
+        // You can submit the form or perform any other action here
+      } else {
+        alert("Signup request canceled.");
+        // Action to take if the user cancels the request
+      }
+    });
+  </script>
+  
+
+  <script>
+
+    (function($) {
+  'use strict';
+  $(function() {
+    var todoListItem = $('.todo-list');
+    var todoListInput = $('.todo-list-input');
+    $('.todo-list-add-btn').on("click", function(event) {
+      event.preventDefault();
+
+      var item = $(this).prevAll('.todo-list-input').val();
+
+      if (item) {
+        todoListItem.append("<li><div class='form-check'><label class='form-check-label'><input class='checkbox' type='checkbox'/>" + item + "<i class='input-helper'></i></label></div><i class='remove mdi mdi-close-circle-outline'></i></li>");
+        todoListInput.val("");
+      }
+
+    });
+
+    todoListItem.on('change', '.checkbox', function() {
+      if ($(this).attr('checked')) {
+        $(this).removeAttr('checked');
+      } else {
+        $(this).attr('checked', 'checked');
+      }
+
+      $(this).closest("li").toggleClass('completed');
+
+    });
+
+    todoListItem.on('click', '.remove', function() {
+      $(this).parent().remove();
+    });
+
+  });
+})(jQuery);
+</script>
+<p id="demo"></p>
+
+
+
+
+  
+<script src="script.js"></script>
+<!--footer-->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>company</h4>
+                <ul>
+                    <li><a href="about.html">about us</a></li>
+                    <li><a href="#">our services</a></li>
+                    <li><a href="#">privacy policy</a></li>
+                    <li><a href="#">affiliate program</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>get help</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">shipping</a></li>
+                    <li><a href="#">returns</a></li>
+                    <li><a href="#">order status</a></li>
+                    <li><a href="#">payment options</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>online shop</h4>
+                <ul>
+                    <li><a href="#">desk & table</a></li>
+                    <li><a href="#">chair</a></li>
+                    <li><a href="#">sofa</a></li>
+                    <li><a href="#">storage</a><span class="badge bg-secondary">New</span></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>follow us</h4>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/ocean.furniture.kz/?hl=de" target = "_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=77017245588" target = "_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://t.me/+TY3ofZQ9pvk2MjJi"><i class="fab fa-telegram" target = "_blank"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>NEWSLETTER</h4>
+                <form class="form-inline" id="subscriptionForm">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <input type="email" class="form-control" id="email" placeholder="Your email address">
+                        <button type="submit" class="btn btn-primary" onclick="confirmSubscription()">Subscribe</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</footer>
+<!--footer-->
+<script>
+    function confirmSubscription() {
+      const userConfirmed = confirm("Are you sure you want to subscribe with this email address?");
+      
+      if (userConfirmed) {
+        // Perform the subscribe operation
+        // Replace with your subscription logic
+        alert("You are now subscribed!");
+      } else {
+        // User canceled the subscription
+      }
+    }
+  </script>
+</body>
+</html>

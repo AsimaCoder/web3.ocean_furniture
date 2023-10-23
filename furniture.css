@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+body{
+	line-height: 10.5;
+	font-family: 'Poppins', sans-serif;
+}
+
+/*navbar*/
+
+
+.navbar-brand img {
+    max-height: 50px; /* Adjust as needed */
+}
+
+.navbar-nav .nav-item {
+    margin-right: 20px;
+}
+
+
+.navbar-nav .nav-link:hover {
+    color: #000; /* Change to your desired hover color */
+}
+/*navbar*/
+
+
+.container{
+	max-width: 800px;
+	margin:auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+
+/*table*/
+
+.table-box
+{
+    margin: 50px auto;
+}
+
+.table-row{
+    display: table;
+    width: 80%;
+    margin: 10px auto;
+    font-family: Poppins;
+    background: transparent;
+    padding: 12px 0;
+    color: #555;
+    font-size: 13px;
+    box-shadow: 0 1px 4px 0px rgba(0,0,50,0.3);
+}
+
+.table-cell{
+    display: table-cell;
+    width: 20%;
+    text-align: center;
+    padding: 4px 0;
+    border-right: 1px solid #d6d4d4;
+    vertical-align: middle;
+}
+.first-cell{
+    text-align: left;
+    padding-left: 10px;
+}
+.last-cell{
+    border-right: none;
+}
+a{
+    text-decoration: none;
+    color:black;
+}
+
+@media only screen and (max-width: 600px) {
+  .table-row {
+    font-size: 11px;
+  }
+}
+/*table*/
+
+/*footer*/
+.footer {
+    background-color: #24262b;
+    padding: 70px 0;
+    display: flex; /* Use flexbox to align columns */
+    flex-wrap: wrap; /* Wrap columns if screen size is small */
+    justify-content: space-between; /* Space evenly between columns */
+}
+
+.footer-col {
+    flex: 0 0 calc(20% - 30px); /* Adjust the column width, considering the gap */
+    padding: 0 15px;
+    box-sizing: border-box; /* Include padding in the width calculation */
+    margin-bottom: 30px; /* Add margin to separate columns */
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color:rgba(196,158,117,255);
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color:rgba(14,54,83,255);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color:rgba(14,54,83,255);
+	background-color: #ffffff;
+}
+
+/* Rest of your CSS for .footer-col stays the same */
+
+@media (max-width: 767px) {
+    .footer-col {
+        flex: 0 0 calc(50% - 30px); /* Adjust column width for smaller screens */
+    }
+}
+
+@media (max-width: 574px) {
+    .footer-col {
+        flex: 0 0 calc(100% - 30px); /* Full width for smallest screens */
+    }
+}
+/*footer*/
+#c p{
+	font-weight: bold;
+
+
+}
+#btn3{
+	text-align: center;
+}
+#btn3 button{
+	width: 150px ;
+	height: 30px;
+	background-color: transparent;
+	border: 1px solid black;
+	transition: 0.5s ease;
+	cursor: pointer;
+
+
+}
+#btn3 button:hover{
+	background-color: rgba(238,224,208);
+
+}
+@media screen and (max-width:895px){
+	#btn3 button{
+		width: 100px;
+	}
+
+}
+

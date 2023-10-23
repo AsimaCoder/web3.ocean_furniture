@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ocean Furniture</title>
+    <meta charset="UTF-8"><!--idk-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!--idk-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--idk-->
+    <link rel="stylesheet" type="text/css" href="furniture.css">  <!--css from file--> 
+    <link rel="shortcut icon" type="image/x-icon" href="ocean_logo-mini.png">  <!--favicon-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Include Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include Bootstrap JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+
+<!--at least in down change the color of background-->
+    <style> -->
+        body {
+            margin: 0;
+            padding: 0;    
+            background-color: #f0f0f0;
+        }
+.navbar {
+    margin-bottom: 0;
+}
+
+/* Reduce margin-top of the carousel */
+
+
+        header {
+            width: 100%;
+            background-color:rgba(237,237,237,255);
+            overflow: auto;
+        }
+
+        .logo img {
+            position: absolute;
+            margin-top: 15px;
+            margin-left: 10px;
+        }
+
+
+        ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        li {
+            display: flex;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-family: Poppins;
+            color: rgba(15,54,85,255);
+            
+        }
+		.image-container {
+            max-width: 100%;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+        }
+        .custom-col {
+        margin-right: 10px;
+    }
+
+    .map-container {
+    margin: 10px 20px; /* Adjust margins as needed */
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Styles for the map */
+  .map-container iframe {
+    width: 100%;
+    height: 400px; /* Adjust the initial height as needed */
+    border: 0;
+  }
+
+  /* Styles for the map overlay */
+  .map-overlay {
+    position: absolute;
+    top: 120px;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 100%; /* Ensure the overlay does not exceed the map's width */
+  }
+
+  /* Media query for smaller screens */
+  @media (max-width: 768px) {
+    .map-container {
+      margin: 10px 0; /* Adjust margins for smaller screens */
+    }
+
+    .map-container iframe {
+      height: 300px; /* Adjust the height for smaller screens */
+    }
+    .map-overlay{
+        height: auto;
+    }
+  }
+
+
+
+/* Define a custom class for the "Send" button */
+.custom-primary-button {
+    background-color: rgba(14, 54, 83, 1); /* Blue color */
+    color: #fff; /* White text color */
+    border:rgba(14, 54, 83, 1); /* Remove the default button border */
+    border-radius: 5px; /* Add a border radius for rounded corners */
+}
+.custom-primary-button:hover {
+    background-color: rgba(196,158,117,255);
+}
+
+
+/* Define a custom class for the "Subscribe" button */
+.custom-secondary-button {
+    background-color:  rgba(196,158,117,255); /* Golden color */
+    color: #fff; /* White text color */
+}
+.custom-secondary-button:hover {
+    background-color: rgba(14, 54, 83, 1);
+}
+.account-icon {
+            font-size: 24px;
+            color: #888; /* Gray color */
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            background-color: #f2f2f2; /* Gray background color */
+            text-align: center;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .account-icon:hover {
+            color: #007bff; /* Change color on hover */
+            background-color: #e0e0e0; /* Change background color on hover */
+        }
+        .search-container {
+	position: relative;
+	width: 200px; /* Set your desired width */
+}
+
+.search-input {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding-right: 30px; /* Space for the search icon */
+}
+
+.search-icon {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 10px;
+	cursor: pointer;
+}
+    </style>
+</head>
+
+<body>
+
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="ocean_logo-1.png" style="width: 200px; height: auto;" alt="Ocean Furniture Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search...">
+                    <i class="fas fa-search search-icon" id="searchIcon"></i>
+                </div>
+                <br>
+            </div>
+            <a href="account.html"> <!-- Replace "new-page.html" with the URL of your new page -->
+                <i class="fas fa-user account-icon"></i>
+            </a>
+        </div>
+    </nav>
+    <!--navbar-->
+    <script>
+        // JavaScript to toggle the search bar
+        const searchIcon = document.getElementById("searchIcon");
+        const searchInput = document.getElementById("searchInput");
+
+        searchIcon.addEventListener("click", function() {
+            searchInput.style.display = (searchInput.style.display === "none") ? "block" : "none";
+            if (searchInput.style.display === "block") {
+                searchInput.focus();
+            }
+        });
+    </script>
+    <!--img-->
+    <div class="image-container">
+        <img src="contactgo.jpg" alt="main">
+    </div>
+    <br>
+    <!--img-->
+<div>
+    <h2 class="text-center" style="margin-top: 50px;">Contact</h2>
+</div>
+<br>
+    <!--map-->
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.399672387591!2d69.6535142758123!3d42.355320935401394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38a91dc2fd084cb1%3A0x59e6ceadac50e9b1!2sOcean%20furniture!5e0!3m2!1sen!2skz!4v1696151925732!5m2!1sen!2skz" width="1180" height="440" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="map-overlay">
+            <p>Ocean Furniture</p>
+            <p><i class="fas fa-map-marker-alt"></i> Nursultan Nazarbayev Avenue 22, Nursat, Karatau district, Shymkent</p>
+            <p><i class="fas fa-envelope"></i> oceanfurnitureof@gmail.com</p>
+            <p><i class="fas fa-phone"></i> +7 (701) 724-5588</p>
+         </div>
+    </div>
+    
+    <!--map-->
+
+    <!--form-->
+    <div class="container">
+        <h2 class="text-center" style="margin-top: 50px;">Message</h2>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-md-6 offset-md-3">
+                <form id="messageForm" onsubmit="return validateForm()">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                        <div id="nameError" class="error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                        <div id="emailError" class="error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" rows="5" placeholder="Enter your message" required></textarea>
+                        <div id="messageError" class="error"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary custom-primary-button">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--form-->
+    <script>
+        function validateForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            const nameError = document.getElementById('nameError');
+            const emailError = document.getElementById('emailError');
+            const messageError = document.getElementById('messageError');
+
+            nameError.textContent = '';
+            emailError.textContent = '';
+            messageError.textContent = '';
+
+            let isValid = true;
+
+            if (!name) {
+                nameError.textContent = 'Name is required';
+                isValid = false;
+            }
+
+            if (!email) {
+                emailError.textContent = 'Email is required';
+                isValid = false;
+            } else if (!isValidEmail(email)) {
+                emailError.textContent = 'Invalid email format';
+                isValid = false;
+            }
+
+            if (!message) {
+                messageError.textContent = 'Message is required';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        function isValidEmail(email) {
+            // Simple email validation, you can use a more robust regex pattern
+            const emailRegex = /^\S+@\S+\.\S+$/;
+            return emailRegex.test(email);
+        }
+    </script>
+    <br>
+    <br>
+    <br>
+    <br>
+
+<!--footer-->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>company</h4>
+                <ul>
+                    <li><a href="about.html">about us</a></li>
+                    <li><a href="#">our services</a></li>
+                    <li><a href="#">privacy policy</a></li>
+                    <li><a href="#">affiliate program</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>get help</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">shipping</a></li>
+                    <li><a href="#">returns</a></li>
+                    <li><a href="#">order status</a></li>
+                    <li><a href="#">payment options</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>online shop</h4>
+                <ul>
+                    <li><a href="#">desk & table</a></li>
+                    <li><a href="#">chair</a></li>
+                    <li><a href="#">sofa</a></li>
+                    <li><a href="#">storage </a><span class="badge bg-secondary">New</span></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>follow us</h4>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/ocean.furniture.kz/?hl=de" target = "_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=77017245588" target = "_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://t.me/+TY3ofZQ9pvk2MjJi"><i class="fab fa-telegram" target = "_blank"></i></a>
+                </div>
+            </div>
+            <div class="footer-col"> 
+                <h4>NEWSLETTER</h4>
+                <form class="form-inline">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <input type="email" class="form-control" id="email" placeholder="Your email address">
+                        <button type="submit" class="btn btn-secondary custom-secondary-button">Subscribe</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--footer-->
+</body>
+</html>

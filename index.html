@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ocean Furniture</title>
+    <meta charset="UTF-8"><!--idk-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!--idk-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--idk-->
+    <link rel="stylesheet" type="text/css" href="furniture.css">  <!--css from file--> 
+    <link rel="shortcut icon" type="image/x-icon" href="ocean_logo-mini.png">  <!--favicon-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Include Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include Bootstrap JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!--at least in down change the color of background-->
+    <style> -->
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+.navbar {
+    margin-bottom: 0;
+}
+
+
+/* Reduce margin-top of the carousel */
+
+
+        header {
+            width: 100%;
+            background-color:rgba(237,237,237,255);
+            overflow: auto;
+        }
+
+        .logo img {
+            position: absolute;
+            margin-top: 15px;
+            margin-left: 10px;
+        }
+
+
+        ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        li {
+            display: flex;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-family: Poppins;
+            color: rgba(196,158,117,255);
+            
+        }
+		.image-container {
+            max-width: 100%;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+        }
+        .custom-col {
+        margin-right: 10px;
+    }
+    .table-row{ /*делает тейбл белым */
+        background-color: aliceblue;
+    }
+    .btn.btn-primary {
+    background-color:rgba(196,158,117,255); /* Change this to your desired background color */
+    color: #FFFFFF; /* Change this to your desired text color */
+    border:rgba(196,158,117,255); /* Remove the default button border */
+    border-radius: 5px; /* Add a border radius for rounded corners */
+    }
+    .btn.btn-primary:hover {
+    background-color:rgba(14, 54, 83, 1); /* Change this to your desired hover background color */
+    color: #FFFFFF; /* Change this to your desired hover text color */
+    cursor: pointer; /* Change the cursor to indicate interactivity  я конечно поменяла кнопку на желаемый цвет но он не заметен */
+    }
+
+            .account-icon {
+            font-size: 24px;
+            color: #888; /* Gray color */
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            background-color: #f2f2f2; /* Gray background color */
+            text-align: center;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .account-icon:hover {
+            color: #007bff; /* Change color on hover */
+            background-color: #e0e0e0; /* Change background color on hover */
+        }
+    .search-container {
+            position: relative;
+            width: 200px; /* Set your desired width */
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding-right: 30px; /* Space for the search icon */
+        }
+
+        .search-icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px;
+            cursor: pointer;
+        }
+        body{
+	margin:0;
+	color:#444;
+	background:#ecf0f1;
+
+}
+*,:after,:before{box-sizing:border-box}
+.pull-left{float:left}
+.pull-right{float:right}
+.clearfix:after,.clearfix:before{content:'';display:table}
+.clearfix:after{clear:both;display:block}
+
+.clock:before,
+.count:after{
+	content:'';
+	position:absolute;
+}
+.clock-wrap{
+	margin:auto;
+	width:240px;
+	height:240px;
+	margin-top:100px;
+	position:relative;
+	border-radius:50px;
+	background-color:#fff;
+	box-shadow:0 0 15px rgba(0,0,0,.15);
+}
+.clock{
+	top:50%;
+	left:50%;
+	width:180px;
+	height:180px;
+	border-radius:50%;
+	position:absolute;
+	margin-top:-90px;
+	margin-left:-90px;
+	background-color:#feeff4;
+}
+.clock:before{
+	top:50%;
+	left:50%;
+	width:120px;
+	height:120px;
+	margin-top:-60px;
+	margin-left:-60px;
+	border-radius:inherit;
+	background-color:rgba(14, 54, 83, 225);
+	box-shadow:0 0 15px rgba(0,0,0,.15), 0 0 3px rgba(255,255,255,.75) inset;
+	/*border:1px solid rgba(255,255,255,.1);*/
+}
+.count{
+	width:100%;
+	color:#fff;
+	height:100%;
+	padding:50px;
+	font-size:32px;
+	font-weight:500;
+	line-height:50px;
+	position:absolute;
+	text-align:center;
+}
+.count:after{
+	width:100%;
+	display:block;
+	font-size:18px;
+	font-weight:300;
+	line-height:18px;
+	text-align:center;
+	position:relative;
+}
+.count.sec:after{content:'sec'}
+.count.min:after{content:'min'}
+.action{
+	margin:auto;
+	max-width:200px;
+}
+.action .input{
+	margin-top:30px;
+	position:relative;
+}
+.action .input-num{
+	width:100%;
+	border:none;
+	padding:12px;
+	border-radius:60px;
+}
+.action .input-btn{
+	top:0;
+	right:0;
+	color:#fff;
+	border:none;
+	border:none;
+	padding:12px;
+	position:absolute;
+	border-radius:60px;
+	background-color:rgba(14, 54, 83, 225);
+	text-transform:uppercase;
+}
+.tbl{display:table;width:100%}
+.tbl .col{display:table-cell}
+    </style>
+</head>
+
+<body>
+    <!--script for carousel-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#carouselExample').carousel();
+        });
+    </script>
+    <!--script for carousel-->
+
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="ocean_logo-1.png" style="width: 200px; height: auto;" alt="Ocean Furniture Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search...">
+                    <i class="fas fa-search search-icon" id="searchIcon"></i>
+                </div>
+                <a href="account.html"> 
+                    <i class="fas fa-user account-icon"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!--navbar-->
+
+<script>
+<!--script for search bar-->
+    const searchIcon = document.getElementById("searchIcon");
+    const searchInput = document.getElementById("searchInput");
+
+    searchIcon.addEventListener("click", function() {
+        searchInput.style.display = (searchInput.style.display === "none") ? "block" : "none";
+        if (searchInput.style.display === "block") {
+            searchInput.focus();
+        }
+    });
+//countdown
+    $step = 1;
+$loops = Math.round(100 / $step);
+$increment = 360 / $loops;
+$half = Math.round($loops / 2);
+$barColor = '#ec366b';
+$backColor = '#feeff4';
+
+$(function(){
+	clock.init();
+});
+clock={
+	interval:null,
+	init:function(){
+		$('.input-btn').click(function(){
+			switch($(this).data('action')){
+				case'start':
+					clock.stop();
+					clock.start($('.input-num').val());
+				break;
+				case'stop':
+					clock.stop();
+				break;
+			}
+		});
+	},
+	start:function(t){
+		var pie = 0;
+		var num = 0;
+		var min = t?t:1;
+		var sec = min*60;
+		var lop = sec;
+		$('.count').text(min);
+		if(min>0){
+			$('.count').addClass('min')
+		}else{
+			$('.count').addClass('sec')
+		}
+		clock.interval = setInterval(function(){
+			sec = sec-1;
+			if(min>1){
+				pie = pie+(100/(lop/min));
+			}else{
+				pie = pie+(100/(lop));
+			}
+			if(pie>=101){ pie = 1; }
+			num = (sec/60).toFixed(2).slice(0,-3);
+			if(num==0){
+				$('.count').removeClass('min').addClass('sec').text(sec);
+			}else{
+				$('.count').removeClass('sec').addClass('min').text(num);
+			}
+			//$('.clock').attr('class','clock pro-'+pie.toFixed(2).slice(0,-3));
+			//console.log(pie+'__'+sec);
+			$i = (pie.toFixed(2).slice(0,-3))-1;
+			if($i < $half){
+				$nextdeg = (90 + ( $increment * $i ))+'deg';
+				$('.clock').css({'background-image':'linear-gradient(90deg,'+$backColor+' 50%,transparent 50%,transparent),linear-gradient('+$nextdeg+','+$barColor+' 50%,'+$backColor+' 50%,'+$backColor+')'});
+			}else{
+				$nextdeg = (-90 + ( $increment * ( $i - $half ) ))+'deg';
+				$('.clock').css({'background-image':'linear-gradient('+$nextdeg+','+$barColor+' 50%,transparent 50%,transparent),linear-gradient(270deg,'+$barColor+' 50%,'+$backColor+' 50%,'+$backColor+')'});
+			}
+			if(sec==0){
+				clearInterval(clock.interval);
+				$('.count').text(0);
+				//$('.clock').removeAttr('class','clock pro-100');
+				$('.clock').removeAttr('style');
+			}
+		},1000);
+	},
+	stop:function(){
+		clearInterval(clock.interval);
+		$('.count').text(0);
+		$('.clock').removeAttr('style');
+	}
+}
+</script>
+    <!--carousel-->
+
+    <div id="carouselExample" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="main1.jpg" class="d-block w-100" alt="Image 1">
+            </div>
+            <div class="carousel-item">
+                <img src="main2.jpg" class="d-block w-100" alt="Image 2">
+            </div>
+            <div class="carousel-item">
+                <img src="main3.jpg" class="d-block w-100" alt="Image 3">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!--carousel-->
+
+    <!--container-->
+		<div class="container">
+			<h2 class="text-center" style="margin-top: 50px;">BESTSELLERS</h2>
+			<div class="row" style="margin-top: 50px;">
+				<!--1-->
+				<div class="col-md-2 col-sm-6 py-3 custom-col">
+					<div class="card">
+						<img src="2.jpg" alt="" class="card-img-top" style="max-height: 265px; max-width: 90%; margin-bottom: 10px;">
+						<div class="card-body">
+							<h3 class="card-title text-center">Armchair Sam</h3>
+							<p class="card-text text-center">$350</p>
+							<div class="text-center"><button>Shop Now</button></div>
+						</div>
+					</div>
+				</div>
+				<!--2-->
+				<div class="col-md-2 col-sm-6 py-3 custom-col">
+					<div class="card">
+						<img src="43.jpg" alt="" class="card-img-top" style="max-height: 265px; max-width: 90%; margin-bottom: 10px;">
+						<div class="card-body">
+							<h3 class="card-title text-center">Table SHT-T9</h3>
+							<p class="card-text text-center">$80</p>
+							<div class="text-center"><button>Shop Now</button></div>
+						</div>
+					</div>
+				</div>
+				<!--3-->
+				<div class="col-md-2 col-sm-6 py-3 custom-col">
+					<div class="card">
+						<img src="32.jpg" alt="" class="card-img-top" style="max-height: 265px; max-width: 90%; margin-bottom: 10px;">
+						<div class="card-body">
+							<h3 class="card-title text-center">Chair SHT-ST37</h3>
+							<p class="card-text text-center">$105</p>
+							<div class="text-center"><button>Shop Now</button></div>
+						</div>
+					</div>
+				</div>
+				<br>
+				<br>
+				<!--4-->
+				<div class="col-md-2 col-sm-6 py-3 custom-col">
+					<div class="card">
+						<img src="33.jpg" alt="" class="card-img-top" style="max-height: 265px; max-width: 90%; margin-bottom: 10px;">
+						<div class="card-body">
+							<h3 class="card-title text-center">Office table SHT-TU14</h3>
+							<p class="card-text text-center">$110</p>
+							<div class="text-center"><button>Shop Now</button></div>
+						</div>
+					</div>
+				</div>
+			</div>
+	    </div>
+<!--container-->
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<hr>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!--table-->
+<div class="table-box">
+<div class="table-row"  style="background-color: rgba(14,54,83,255);">
+    <div class="table-cell">
+        <p>Workatations</p>
+    </div>
+    <div class="table-cell">
+        <p>for 4 person</p>
+    </div>
+    <div class="table-cell">
+        <p>for 6 person</p>
+    </div>
+</div>
+<div class="table-row">
+    <div class="table-cell">
+        <p>Vitra</p>
+    </div>
+    <div class="table-cell">
+        <p>$780</p>
+    </div>
+    <div class="table-cell">
+        <p>$1090</p>
+    </div>
+</div>
+<div class="table-row">
+    <div class="table-cell">
+        <p>Cubicle</p>
+    </div>
+    <div class="table-cell">
+        <p>$890</p>
+    </div>
+    <div class="table-cell">
+        <p>$1290</p>
+    </div>
+</div>
+<div class="table-row">
+    <div class="table-cell">
+        <p>Herman Miller</p>
+    </div>
+    <div class="table-cell">
+        <p>$990</p>
+    </div>
+    <div class="table-cell">
+        <p>$1390</p>
+    </div>
+</div>
+</div>
+<!--table-->
+
+
+<div class="clock-wrap">
+	<div class="clock pro-0">
+		<span class="count">0</span>
+	</div>
+</div>
+<div class="action">
+	<div class="input">
+		<input class="input-num" type="number" min="1" placeholder="Enter Minute"><input data-action="start" class="input-btn" type="button" value="Start">
+	</div>
+</div>
+  
+
+  
+<script src="script.js"></script>
+<!--footer-->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>company</h4>
+                <ul>
+                    <li><a href="about.html">about us</a></li>
+                    <li><a href="#">our services</a></li>
+                    <li><a href="#">privacy policy</a></li>
+                    <li><a href="#">affiliate program</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>get help</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">shipping</a></li>
+                    <li><a href="#">returns</a></li>
+                    <li><a href="#">order status</a></li>
+                    <li><a href="#">payment options</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>online shop</h4>
+                <ul>
+                    <li><a href="#">desk & table</a></li>
+                    <li><a href="#">chair</a></li>
+                    <li><a href="#">sofa</a></li>
+                    <li><a href="#">storage</a><span class="badge bg-secondary">New</span></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>follow us</h4>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/ocean.furniture.kz/?hl=de" target = "_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=77017245588" target = "_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://t.me/+TY3ofZQ9pvk2MjJi"><i class="fab fa-telegram" target = "_blank"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>NEWSLETTER</h4>
+                <form class="form-inline">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <input type="email" class="form-control" id="email" placeholder="Your email address">
+                        <button type="submit" class="btn btn-primary ">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--footer-->
+</body>
+</html>
